@@ -27,6 +27,9 @@ const getDeliveredNotifications = async () => {
 const Home: React.FC = () => {
   const [token, setToken] = useState<string>('')
 
+
+  // TODO  этот обработчик не получает токен. Событие registration, которое должно быть вызвано после checkPermissions не вызывается
+  //  проблему тут
   const addListeners = async () => {
     let r_token = '';
     await PushNotifications.addListener('registration', token => {
